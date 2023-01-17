@@ -20,9 +20,9 @@
 
 <body>
   <!-- example of injection point where you write your app template -->
-  <div  id="q-app">
-<div class="full-height">
-    <q-carousel height="100vh" 
+  <div class="full-height"  id="q-app">
+
+    <q-carousel height="100vh"
       animated 
       v-model="slide" 
       arrows 
@@ -34,22 +34,22 @@
       @mouseenter="autoplay = false"
       @mouseleave="autoplay = true"
    >
-      <q-carousel-slide :name="1" img-src="./base-conhecimento.png">
+      <q-carousel-slide height="768px" :name="1" img-src="./base-conhecimento.png">
 
           <q-btn class=" full-width full-height" href="https://illimitar.movidesk.com/kb"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
           
         </q-carousel-slide>
-        <q-carousel-slide :name="2" img-src="./suporte.png">
+        <q-carousel-slide height="768px"  :name="2" img-src="./suporte.png">
         <q-btn class=" full-width full-height" href="https://chat.movidesk.com/ChatWidget/Landing/BBFBDC798075499080D5811787ECFDCB"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
         
       </q-carousel-slide>
-      <q-carousel-slide :name="3" img-src="./instagram.png">
+      <q-carousel-slide height="768px"  :name="3" img-src="./instagram.png">
         <q-btn class=" full-width full-height" href="https://www.instagram.com/illimitar/"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
 
       </q-carousel-slide>
     </q-carousel>
 
-</div>
+  
 
   </div>
 
