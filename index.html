@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@2.11.5")
+  -->
+
+<head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined|Material+Symbols+Rounded|Material+Symbols+Sharp"
+    rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^6.0.0/css/materialdesignicons.min.css" rel="stylesheet"
+    type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/animate.css@^4.0.0/animate.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.11.5/dist/quasar.rtl.prod.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <!-- example of injection point where you write your app template -->
+  <div  id="q-app">
+
+    <q-carousel height="100vh" 
+      animated 
+      v-model="slide" 
+      arrows 
+      navigation 
+      infinite 
+      :autoplay="autoplay"
+      transition-prev="slide-right" 
+      transition-next="slide-left"
+      @mouseenter="autoplay = false"
+      @mouseleave="autoplay = true"
+   >
+      <q-carousel-slide :name="1" img-src="./base-conhecimento.png">
+
+          <q-btn class=" full-width full-height" href="https://illimitar.movidesk.com/kb"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
+          
+        </q-carousel-slide>
+        <q-carousel-slide :name="2" img-src="./suporte.png">
+        <q-btn class=" full-width full-height" href="https://chat.movidesk.com/ChatWidget/Landing/BBFBDC798075499080D5811787ECFDCB"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
+        
+      </q-carousel-slide>
+      <q-carousel-slide :name="3" img-src="./instagram.png">
+        <q-btn class=" full-width full-height" href="https://www.instagram.com/illimitar/"  target="_blank" text-color="transparent" label="clique aqui" flat ></q-btn>
+
+      </q-carousel-slide>
+    </q-carousel>
+
+
+
+  </div>
+
+  <!-- Add the following at the end of your body tag -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.11.5/dist/quasar.umd.prod.js"></script>
+
+  <script>
+    /*
+      Example kicking off the UI. Obviously, adapt this to your specific needs.
+      Assumes you have a <div id="q-app"></div> in your <body> above
+     */
+    const { ref } = Vue
+
+    const app = Vue.createApp({
+      setup() {
+        return {
+          slide: ref(1),
+          autoplay: ref(true),
+          autoplay:5000,
+
+
+        }
+      }
+    })
+
+    app.use(Quasar, { config: {} })
+    app.mount('#q-app')
+
+    /*
+    brand: {
+      // primary: '#e46262',
+      // ... or all other brand colors
+    },
+    notify: {...}, // default set of options for Notify Quasar plugin
+    loading: {...}, // default set of options for Loading Quasar plugin
+    loadingBar: { ... }, // settings for LoadingBar Quasar plugin
+    // ..and many more (check Installation card on each Quasar component/directive/plugin)
+    */
+
+  </script>
+</body>
+
+</html>
